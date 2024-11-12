@@ -13506,22 +13506,42 @@ ul.slick-dots {
   height: auto;
   border: 1px solid transparent;
 }
-/* Ensure that only the active slide is visible */
+/* Fade-in animation */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+#top {
+  opacity: 0; /* Start from invisible */
+  animation: fadeIn 2s ease-in-out forwards; /* Fade in over 2 seconds */
+}
+
 .Modern-Slider .item {
-  display: none;
   opacity: 0;
-  transition: opacity 1s ease-in-out;
+  visibility: hidden;
+  transition: opacity 1s ease-in-out, visibility 1s ease-in-out;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 .Modern-Slider .item.active {
-  display: block;
   opacity: 1;
+  visibility: visible;
+  position: relative;
 }
 
-/* Add any additional styling as needed */
-.Modern-Slider .img-fill img {
+.img-fill img {
   width: 100%;
   height: auto;
+  display: block;
 }
 
 /*
@@ -13535,6 +13555,22 @@ about
   padding: 100px 0px 0px 0px;
   position: relative;
   z-index: 9;
+}
+
+/* Fade-in animation for About section */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Apply the fade-in effect to the About section */
+#about {
+  opacity: 0; /* Start from invisible */
+  animation: fadeIn 2s ease-in-out forwards; /* Fade in over 2 seconds */
 }
 
 #about .section-heading h2 {

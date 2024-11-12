@@ -27,7 +27,7 @@ const Banner = () => {
                 <h4>KlassyCafe</h4>
                 <h6>THE BEST EXPERIENCE</h6>
                 <div className="main-white-button scroll-to-section">
-                  <a href="#reservation">Make A Reservation</a>
+                  <a href="#reservation">Contact Us</a>
                 </div>
               </div>
             </div>

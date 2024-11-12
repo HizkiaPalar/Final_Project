@@ -1,17 +1,23 @@
 import "./App.css";
 import Banner from "./components/banner";
 import Header from "./components/header";
-import About from "./components/section/about"
+import About from "./components/section/about";
+import Footer from "./components/section/footer";
 function App() {
   return (
     <div>
-      <Header/>
+      <div className="jumper">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <Header />
       {/* ***** Header Area End ***** */}
       {/* ***** Main Banner Area Start ***** */}
-      <Banner/>
+      <Banner />
       {/* ***** Main Banner Area End ***** */}
       {/* ***** About Area Starts ***** */}
-      <About/>
+      <About />
       {/* ***** About Area Ends ***** */}
       {/* ***** Menu Area Starts ***** */}
       <section className="section" id="menu">
@@ -303,158 +309,6 @@ function App() {
                     </div>
                   </div>
                 </div>
-              </div>
-            </div>
-            <div className="col-lg-6">
-              <div className="contact-form">
-                <form id="contact" action method="post">
-                  <div className="row">
-                    <div className="col-lg-12">
-                      <h4>Table Reservation</h4>
-                    </div>
-                    <div className="col-lg-6 col-sm-12">
-                      <fieldset>
-                        <input
-                          name="name"
-                          type="text"
-                          id="name"
-                          placeholder="Your Name*"
-                          required
-                        />
-                      </fieldset>
-                    </div>
-                    <div className="col-lg-6 col-sm-12">
-                      <fieldset>
-                        <input
-                          name="email"
-                          type="text"
-                          id="email"
-                          pattern="[^ @]*@[^ @]*"
-                          placeholder="Your Email Address"
-                          required
-                        />
-                      </fieldset>
-                    </div>
-                    <div className="col-lg-6 col-sm-12">
-                      <fieldset>
-                        <input
-                          name="phone"
-                          type="text"
-                          id="phone"
-                          placeholder="Phone Number*"
-                          required
-                        />
-                      </fieldset>
-                    </div>
-                    <div className="col-md-6 col-sm-12">
-                      <fieldset>
-                        <select
-                          value="number-guests"
-                          name="number-guests"
-                          id="number-guests"
-                        >
-                          <option value="number-guests">
-                            Number Of Guests
-                          </option>
-                          <option name={1} id={1}>
-                            1
-                          </option>
-                          <option name={2} id={2}>
-                            2
-                          </option>
-                          <option name={3} id={3}>
-                            3
-                          </option>
-                          <option name={4} id={4}>
-                            4
-                          </option>
-                          <option name={5} id={5}>
-                            5
-                          </option>
-                          <option name={6} id={6}>
-                            6
-                          </option>
-                          <option name={7} id={7}>
-                            7
-                          </option>
-                          <option name={8} id={8}>
-                            8
-                          </option>
-                          <option name={9} id={9}>
-                            9
-                          </option>
-                          <option name={10} id={10}>
-                            10
-                          </option>
-                          <option name={11} id={11}>
-                            11
-                          </option>
-                          <option name={12} id={12}>
-                            12
-                          </option>
-                        </select>
-                      </fieldset>
-                    </div>
-                    <div className="col-lg-6">
-                      <div id="filterDate2">
-                        <div
-                          className="input-group date"
-                          data-date-format="dd/mm/yyyy"
-                        >
-                          <input
-                            name="date"
-                            id="date"
-                            type="text"
-                            className="form-control"
-                            placeholder="dd/mm/yyyy"
-                          />
-                          <div className="input-group-addon">
-                            <span className="glyphicon glyphicon-th" />
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="col-md-6 col-sm-12">
-                      <fieldset>
-                        <select value="time" name="time" id="time">
-                          <option value="time">Time</option>
-                          <option name="Breakfast" id="Breakfast">
-                            Breakfast
-                          </option>
-                          <option name="Lunch" id="Lunch">
-                            Lunch
-                          </option>
-                          <option name="Dinner" id="Dinner">
-                            Dinner
-                          </option>
-                        </select>
-                      </fieldset>
-                    </div>
-                    <div className="col-lg-12">
-                      <fieldset>
-                        <textarea
-                          name="message"
-                          rows={6}
-                          id="message"
-                          placeholder="Message"
-                          required
-                          defaultValue={""}
-                        />
-                      </fieldset>
-                    </div>
-                    <div className="col-lg-12">
-                      <fieldset>
-                        <button
-                          type="submit"
-                          id="form-submit"
-                          className="main-button-icon"
-                        >
-                          Make A Reservation
-                        </button>
-                      </fieldset>
-                    </div>
-                  </div>
-                </form>
               </div>
             </div>
           </div>
@@ -850,54 +704,7 @@ function App() {
       </section>
       {/* ***** Chefs Area Ends ***** */}
       {/* ***** Footer Start ***** */}
-      <footer>
-        <div className="container">
-          <div className="row">
-            <div className="col-lg-4 col-xs-12">
-              <div className="right-text-content">
-                <ul className="social-icons">
-                  <li>
-                    <a href="#">
-                      <i className="fa fa-facebook" />
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <i className="fa fa-twitter" />
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <i className="fa fa-linkedin" />
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <i className="fa fa-instagram" />
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div className="col-lg-4">
-              <div className="logo">
-                <a href="index.html">
-                  <img src="assets/images/white-logo.png" alt />
-                </a>
-              </div>
-            </div>
-            <div className="col-lg-4 col-xs-12">
-              <div className="left-text-content">
-                <p>
-                  © Copyright Klassy Cafe Co.
-                  <br />
-                  Design: TemplateMo
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }
