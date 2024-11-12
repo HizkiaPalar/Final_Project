@@ -1,0 +1,57 @@
+import React, { useState, useEffect } from "react";
+import Slide1 from "../../assets/images/slide-01.jpg";
+import Slide2 from "../../assets/images/slide-02.jpg";
+import Slide3 from "../../assets/images/slide-03.jpg";
+
+
+const Banner = () => {
+  const slides = [Slide1, Slide2, Slide3];
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  // Automatically change slides every 3 seconds
+  useEffect(() => {
+    const slideInterval = setInterval(() => {
+      setCurrentSlide((prevSlide) => (prevSlide + 1) % slides.length);
+    }, 3000);
+
+    return () => clearInterval(slideInterval); // Cleanup on component unmount
+  }, [slides.length]);
+
+  return (
+    <div id="top">
+      <div className="container-fluid">
+        <div className="row">
+          <div className="col-lg-4">
+            <div className="left-content">
+              <div className="inner-content">
+                <h4>KlassyCafe</h4>
+                <h6>THE BEST EXPERIENCE</h6>
+                <div className="main-white-button scroll-to-section">
+                  <a href="#reservation">Make A Reservation</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="col-lg-8">
+            <div className="main-banner header-text">
+              <div className="Modern-Slider">
+                {slides.map((slide, index) => (
+                  <div
+                    key={index}
+                    className={`item ${index === currentSlide ? "active" : ""}`}
+                  >
+                    <div className="img-fill">
+                      <img src={slide} alt={`Slide ${index + 1}`} />
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Banner;
