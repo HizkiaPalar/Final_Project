@@ -2,6 +2,7 @@ import "./App.css";
 import Banner from "./components/banner";
 import Header from "./components/header";
 import About from "./components/section/about";
+import Chefs from "./components/section/chefs";
 import Footer from "./components/section/footer";
 function App() {
   return (
@@ -166,107 +167,7 @@ function App() {
       </section>
       {/* ***** Menu Area Ends ***** */}
       {/* ***** Chefs Area Starts ***** */}
-      <section className="section" id="chefs">
-        <div className="container">
-          <div className="row">
-            <div className="col-lg-4 offset-lg-4 text-center">
-              <div className="section-heading">
-                <h6>Our Chefs</h6>
-                <h2>We offer the best ingredients for you</h2>
-              </div>
-            </div>
-          </div>
-          <div className="row">
-            <div className="col-lg-4">
-              <div className="chef-item">
-                <div className="thumb">
-                  <div className="overlay" />
-                  <ul className="social-icons">
-                    <li>
-                      <a href="#">
-                        <i className="fa fa-facebook" />
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#">
-                        <i className="fa fa-twitter" />
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#">
-                        <i className="fa fa-instagram" />
-                      </a>
-                    </li>
-                  </ul>
-                  <img src="assets/images/chefs-01.jpg" alt="Chef #1" />
-                </div>
-                <div className="down-content">
-                  <h4>Randy Walker</h4>
-                  <span>Pastry Chef</span>
-                </div>
-              </div>
-            </div>
-            <div className="col-lg-4">
-              <div className="chef-item">
-                <div className="thumb">
-                  <div className="overlay" />
-                  <ul className="social-icons">
-                    <li>
-                      <a href="#">
-                        <i className="fa fa-facebook" />
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#">
-                        <i className="fa fa-twitter" />
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#">
-                        <i className="fa fa-behance" />
-                      </a>
-                    </li>
-                  </ul>
-                  <img src="assets/images/chefs-02.jpg" alt="Chef #2" />
-                </div>
-                <div className="down-content">
-                  <h4>David Martin</h4>
-                  <span>Cookie Chef</span>
-                </div>
-              </div>
-            </div>
-            <div className="col-lg-4">
-              <div className="chef-item">
-                <div className="thumb">
-                  <div className="overlay" />
-                  <ul className="social-icons">
-                    <li>
-                      <a href="#">
-                        <i className="fa fa-facebook" />
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#">
-                        <i className="fa fa-twitter" />
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#">
-                        <i className="fa fa-google" />
-                      </a>
-                    </li>
-                  </ul>
-                  <img src="assets/images/chefs-03.jpg" alt="Chef #3" />
-                </div>
-                <div className="down-content">
-                  <h4>Peter Perkson</h4>
-                  <span>Pancake Chef</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <Chefs />
       {/* ***** Chefs Area Ends ***** */}
       {/* ***** Reservation Us Area Starts ***** */}
       <section className="section" id="reservation">
