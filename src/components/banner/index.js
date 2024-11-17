@@ -24,8 +24,8 @@ const Banner = () => {
           <div className="col-lg-4">
             <div className="left-content">
               <div className="inner-content">
-                <h4>KlassyCafe</h4>
-                <h6>THE BEST EXPERIENCE</h6>
+                <h4>Klab.at</h4>
+                <h6>Social Space - Getaway - Garden </h6>
                 <div className="main-white-button scroll-to-section">
                   <a href="#reservation">Contact Us</a>
                 </div>

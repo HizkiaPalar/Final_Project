@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import KlassyLogo from "../../assets/images/klassy-logo.png";
+import Logo from "././../../assets/images/logoklabatspace.jpg";
 
 const Header = () => {
   const [activeSection, setActiveSection] = useState("top");
@@ -48,7 +48,7 @@ const Header = () => {
             <nav className="main-nav">
               {/* ***** Logo Start ***** */}
               <a href="#top" className="logo">
-                <img src={KlassyLogo} alt="klassy cafe html template" />
+                <img src={Logo} alt="klassy cafe html template" />
               </a>
               {/* ***** Logo End ***** */}
               {/* ***** Menu Start ***** */}

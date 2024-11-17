@@ -4,10 +4,9 @@ import About2 from "../../../assets/images/about-thumb-02.jpg";
 import About3 from "../../../assets/images/about-thumb-03.jpg";
 import AboutVid from "../../../assets/images/about-video-bg.jpg";
 
-
 const About = () => {
   return (
-    <section className="section" id="about">
+    <section className="section mt-5 mb-5" id="about">
       <div className="container">
         <div className="row">
           <div className="col-lg-6 col-md-6 col-xs-12">
