@@ -4,7 +4,7 @@ import Slider from "react-slick";
 import menuItem1 from "../../../assets/images/pao.jpg";
 import menuItem2 from "../../../assets/images/dimsum.jpg";
 import menuItem3 from "../../../assets/images/churos.jpg";
-import menuItem5 from "../../../assets/images/tori.jpg";
+import menuItem5 from "../../../assets/images/Tori.jpg";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 

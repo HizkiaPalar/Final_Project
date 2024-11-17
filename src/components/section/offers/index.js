@@ -7,7 +7,7 @@ import Offers4 from "../../../assets/images/Nasi.jpg";
 import Offers5 from "../../../assets/images/Nasi.jpg";
 import Offers6 from "../../../assets/images/steak.jpg";
 import Offers7 from "../../../assets/images/dimsum.jpg";
-import Offers8 from "../../../assets/images/tori.jpg";
+import Offers8 from "../../../assets/images/Tori.jpg";
 import Offers9 from "../../../assets/images/Kentang.jpg";
 import Offers10 from "../../../assets/images/Nasi.jpg";
 import Offers11 from "../../../assets/images/Cofee.jpg";
@@ -37,8 +37,8 @@ const Offers = () => {
         <div className="row">
           <div className="col-lg-4 offset-lg-4 text-center">
             <div className="section-heading">
-              <h6>Klassy Week</h6>
-              <h2>This Week’s Special Meal Offers</h2>
+              <h6>{offers.title}</h6>
+              <h2>{offers.subtitle}</h2>
             </div>
           </div>
         </div>
@@ -53,19 +53,19 @@ const Offers = () => {
                         <li>
                           <a href="#tabs-1">
                             <img src={Offers1} />
-                            Food
+                            {offers.food}
                           </a>
                         </li>
                         <li>
                           <a href="#tabs-2">
                             <img src={Offers2} />
-                            Drink
+                            {offers.drink}
                           </a>
                         </li>
                         <li>
                           <a href="#tabs-3">
                             <img src={Offers3} />
-                            Dessert
+                            {offers.dessert}
                           </a>
                         </li>
                       </ul>
