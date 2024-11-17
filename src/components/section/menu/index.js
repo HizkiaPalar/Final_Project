@@ -1,10 +1,9 @@
 import React from "react";
 import Slider from "react-slick";
-import menuItem1 from "../../../assets/images/menu-item-01.jpg";
-import menuItem2 from "../../../assets/images/menu-item-02.jpg";
-import menuItem3 from "../../../assets/images/menu-item-03.jpg";
-import menuItem4 from "../../../assets/images/menu-item-04.jpg";
-import menuItem5 from "../../../assets/images/menu-item-05.jpg";
+import menuItem1 from "../../../assets/images/pao.jpg";
+import menuItem2 from "../../../assets/images/dimsum.jpg";
+import menuItem3 from "../../../assets/images/churos.jpg";
+import menuItem5 from "../../../assets/images/tori.jpg";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
@@ -48,19 +47,19 @@ const Menu = () => {
           <Slider {...settings}>
             <div className="item">
               <div className="card">
-                <img src={menuItem1} alt="Chocolate Cake" />
+                <img src={menuItem1}  />
                 <div className="price">
-                  <h6>$14</h6>
+                  <h6>10K</h6>
                 </div>
                 <div className="info">
-                  <h1 className="title">Chocolate Cake</h1>
+                  <h1 className="title">Pao</h1>
                   <p className="description">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                     sedii do eiusmod teme.
                   </p>
                   <div className="main-text-button">
                     <a href="#reservation">
-                      Make Reservation <i className="fa fa-angle-down" />
+                      Contact <i className="fa fa-angle-down" />
                     </a>
                   </div>
                 </div>
@@ -68,19 +67,19 @@ const Menu = () => {
             </div>
             <div className="item">
               <div className="card">
-                <img src={menuItem2} alt="Klassy Pancake" />
+                <img src={menuItem2} />
                 <div className="price">
-                  <h6>$22</h6>
+                  <h6>20K</h6>
                 </div>
                 <div className="info">
-                  <h1 className="title">Klassy Pancake</h1>
+                  <h1 className="title">Dimsum</h1>
                   <p className="description">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                     sedii do eiusmod teme.
                   </p>
                   <div className="main-text-button">
                     <a href="#reservation">
-                      Make Reservation <i className="fa fa-angle-down" />
+                      Contact <i className="fa fa-angle-down" />
                     </a>
                   </div>
                 </div>
@@ -88,19 +87,19 @@ const Menu = () => {
             </div>
             <div className="item">
               <div className="card">
-                <img src={menuItem3} alt="Tall Klassy Bread" />
+                <img src={menuItem3}  />
                 <div className="price">
-                  <h6>$18</h6>
+                  <h6>20K</h6>
                 </div>
                 <div className="info">
-                  <h1 className="title">Tall Klassy Bread</h1>
+                  <h1 className="title">Churos</h1>
                   <p className="description">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                     sedii do eiusmod teme.
                   </p>
                   <div className="main-text-button">
                     <a href="#reservation">
-                      Make Reservation <i className="fa fa-angle-down" />
+                      Contact <i className="fa fa-angle-down" />
                     </a>
                   </div>
                 </div>
@@ -109,19 +108,19 @@ const Menu = () => {
             
             <div className="item">
               <div className="card">
-                <img src={menuItem5} alt="Klassy Cup Cake" />
+                <img src={menuItem5} />
                 <div className="price">
-                  <h6>$8.50</h6>
+                  <h6>35K</h6>
                 </div>
                 <div className="info">
-                  <h1 className="title">Klassy Cup Cake</h1>
+                  <h1 className="title">Tori Miso Ramen</h1>
                   <p className="description">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                     sedii do eiusmod teme.
                   </p>
                   <div className="main-text-button">
                     <a href="#reservation">
-                      Make Reservation <i className="fa fa-angle-down" />
+                      Contact <i className="fa fa-angle-down" />
                     </a>
                   </div>
                 </div>

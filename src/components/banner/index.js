@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
-import Slide1 from "../../assets/images/slide-01.jpg";
-import Slide2 from "../../assets/images/slide-02.jpg";
-import Slide3 from "../../assets/images/slide-03.jpg";
-
+import Slide1 from "../../assets/images/banner2.jpg";
+import Slide2 from "../../assets/images/banner3.jpg";
+import Slide3 from "../../assets/images/banner1.jpg";
 
 const Banner = () => {
   const slides = [Slide1, Slide2, Slide3];
@@ -24,8 +23,8 @@ const Banner = () => {
           <div className="col-lg-4">
             <div className="left-content">
               <div className="inner-content">
-                <h4>KlassyCafe</h4>
-                <h6>THE BEST EXPERIENCE</h6>
+                <h4>Klab.at</h4>
+                <h6>Social Space - Getaway - Garden </h6>
                 <div className="main-white-button scroll-to-section">
                   <a href="#reservation">Contact Us</a>
                 </div>
