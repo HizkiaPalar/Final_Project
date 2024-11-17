@@ -1,7 +1,7 @@
 import React from "react";
-import Chefs1 from "../../../assets/images/chefs-01.jpg";
-import Chefs2 from "../../../assets/images/chefs-02.jpg";
-import Chefs3 from "../../../assets/images/chefs-03.jpg";
+import Chefs1 from "../../../assets/images/Barista.jpg";
+import Chefs2 from "../../../assets/images/Kitchen.jpg";
+import Chefs3 from "../../../assets/images/Pastry.jpg";
 
 const Chefs = () => {
   return (
@@ -40,8 +40,8 @@ const Chefs = () => {
                 <img src={Chefs1} />
               </div>
               <div className="down-content">
-                <h4>Randy Walker</h4>
-                <span>Pastry Chef</span>
+                <h4>Randy Immanuel</h4>
+                <span>Baristas</span>
               </div>
             </div>
           </div>
@@ -69,8 +69,8 @@ const Chefs = () => {
                 <img src={Chefs2} />
               </div>
               <div className="down-content">
-                <h4>David Martin</h4>
-                <span>Cookie Chef</span>
+                <h4>David Timothy</h4>
+                <span>Kitchen Chef</span>
               </div>
             </div>
           </div>
@@ -98,8 +98,8 @@ const Chefs = () => {
                 <img src={Chefs3} />
               </div>
               <div className="down-content">
-                <h4>Peter Perkson</h4>
-                <span>Pancake Chef</span>
+                <h4>Kevin Rafael</h4>
+                <span>Pastry Chef</span>
               </div>
             </div>
           </div>
