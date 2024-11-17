@@ -12828,7 +12828,6 @@ header
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15) !important;
 }
 
-
 .header-area {
   background-color: #fff;
   position: absolute;
@@ -12842,8 +12841,6 @@ header
   -o-transition: all 0.5s ease 0s;
   transition: all 0.5s ease 0s;
 }
-
-
 
 .header-area .main-nav .logo {
   line-height: 100px;
@@ -14402,8 +14399,6 @@ responsive
   color: #fff;
 }
 
-
-
 /* Menambahkan styling pada tampilan mobile */
 @media (max-width: 768px) {
   .menu-trigger {
@@ -14443,3 +14438,24 @@ responsive
 html {
   scroll-behavior: smooth;
 }
+
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.footer-logo {
+  max-width: 100px; /* Sesuaikan ukuran maksimum */
+  height: auto; /* Pertahankan rasio aspek gambar */
+  display: block; /* Opsional: untuk membuatnya elemen blok */
+  margin: 0 auto; /* Opsional: untuk memusatkan logo */
+}
+
+
+

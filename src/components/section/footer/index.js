@@ -1,5 +1,5 @@
 import React from "react";
-import WhiteLogo from "../../../assets/images/white-logo.png";
+import WhiteLogo from "../../../assets/images/logoklabatspace.jpg";
 const Footer = () => {
   return (
     <footer>
@@ -34,7 +34,11 @@ const Footer = () => {
           <div className="col-lg-4">
             <div className="logo">
               <a href="index.html">
-                <img src={WhiteLogo} />
+                <img
+                  src={WhiteLogo}
+                  className="footer-logo"
+                  alt="Klabat Space Logo"
+                />
               </a>
             </div>
           </div>

@@ -8,14 +8,12 @@ import Offers from "./components/section/offers";
 import Footer from "./components/section/footer";
 import Reservation from "./components/section/reservation";
 import Menu from "./components/section/menu";
-import Navbar from "./components/navbar";
 
 function App() {
   const sectionsRef = useRef([]); // Array untuk menyimpan referensi elemen
 
   useEffect(() => {
     const handleScroll = () => {
-      // Buat observer
       const observer = new IntersectionObserver(
         (entries) => {
           entries.forEach((entry) => {
@@ -27,7 +25,6 @@ function App() {
         { threshold: 0.1 } // 10% dari elemen terlihat
       );
 
-      // Observe setiap elemen
       sectionsRef.current.forEach((section) => {
         if (section) {
           observer.observe(section);
@@ -35,7 +32,6 @@ function App() {
       });
 
       return () => {
-        // Cleanup observer saat unmount
         sectionsRef.current.forEach((section) => {
           if (section) {
             observer.unobserve(section);
@@ -49,10 +45,7 @@ function App() {
 
   return (
     <div>
-
       <Header />
-
-      {/* Tambahkan elemen ke sectionsRef untuk diobservasi */}
       <div
         className="fade-in-section"
         ref={(el) => (sectionsRef.current[0] = el)}
