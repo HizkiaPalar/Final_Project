@@ -1,17 +1,26 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Chefs1 from "../../../assets/images/Barista.jpg";
 import Chefs2 from "../../../assets/images/Kitchen.jpg";
 import Chefs3 from "../../../assets/images/Pastry.jpg";
-
+import { getDatabase, ref, onValue } from "firebase/database";
 const Chefs = () => {
+  const [chef, setChef] = useState({});
+  useEffect(() => {
+    const db = getDatabase();
+    const chefRef = ref(db, "chef");
+    onValue(chefRef, (snapshot) => {
+      const data = snapshot.val();
+      setChef(data);
+    });
+  }, []);
   return (
     <section className="section" id="chefs">
       <div className="container">
         <div className="row">
           <div className="col-lg-4 offset-lg-4 text-center">
             <div className="section-heading">
-              <h6>Our Chefs</h6>
-              <h2>We offer the best ingredients for you</h2>
+              <h6>{chef.chefs}</h6>
+              <h2>{chef.heading}</h2>
             </div>
           </div>
         </div>
@@ -40,8 +49,8 @@ const Chefs = () => {
                 <img src={Chefs1} />
               </div>
               <div className="down-content">
-                <h4>Randy Immanuel</h4>
-                <span>Baristas</span>
+                <h4>{chef.chef1}</h4>
+                <span>{chef.job1}</span>
               </div>
             </div>
           </div>
@@ -69,8 +78,8 @@ const Chefs = () => {
                 <img src={Chefs2} />
               </div>
               <div className="down-content">
-                <h4>David Timothy</h4>
-                <span>Kitchen Chef</span>
+                <h4>{chef.chef2}</h4>
+                <span>{chef.job2}</span>
               </div>
             </div>
           </div>
@@ -98,8 +107,8 @@ const Chefs = () => {
                 <img src={Chefs3} />
               </div>
               <div className="down-content">
-                <h4>Kevin Rafael</h4>
-                <span>Pastry Chef</span>
+                <h4>{chef.chef3}</h4>
+                <span>{chef.job3}</span>
               </div>
             </div>
           </div>

@@ -1,6 +1,16 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { getDatabase, ref, onValue } from "firebase/database";
 import WhiteLogo from "../../../assets/images/logoklabatspace.jpg";
 const Footer = () => {
+  const [footer, setFooter] = useState({});
+  useEffect(() => {
+    const db = getDatabase();
+    const footerRef = ref(db, "footer");
+    onValue(footerRef, (snapshot) => {
+      const data = snapshot.val();
+      setFooter(data);
+    });
+  }, []);
   return (
     <footer>
       <div className="container">
@@ -45,9 +55,9 @@ const Footer = () => {
           <div className="col-lg-4 col-xs-12">
             <div className="left-text-content">
               <p>
-                Klabat Space
+                {footer.name}
                 <br />
-                Design by Kelompok Summer
+                {footer.design}
               </p>
             </div>
           </div>
