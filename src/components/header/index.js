@@ -1,11 +1,20 @@
 import React, { useState, useEffect } from "react";
 import Logo from "./../../assets/images/logoklabatspace.jpg";
+import { getDatabase, ref, onValue } from "firebase/database";
 
 const Header = () => {
   const [activeSection, setActiveSection] = useState("top");
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false); // Menambah state untuk membuka menu
-
+  const [header, setHeader] = useState({});
+  useEffect(() => {
+    const db = getDatabase();
+    const headerRef = ref(db, "header");
+    onValue(headerRef, (snapshot) => {
+      const data = snapshot.val();
+      setHeader(data);
+    });
+  }, []);
   useEffect(() => {
     const headerElement = document.querySelector(".header-area");
     if (headerElement) {
@@ -63,7 +72,7 @@ const Header = () => {
                     className={activeSection === "top" ? "active" : ""}
                     onClick={(e) => handleMenuClick("top", e)}
                   >
-                    Home
+                    {header.nav1}
                   </a>
                 </li>
                 <li className="scroll-to-section">
@@ -72,7 +81,7 @@ const Header = () => {
                     className={activeSection === "about" ? "active" : ""}
                     onClick={(e) => handleMenuClick("about", e)}
                   >
-                    About
+                    {header.nav2}
                   </a>
                 </li>
                 <li className="scroll-to-section">
@@ -81,7 +90,7 @@ const Header = () => {
                     className={activeSection === "menu" ? "active" : ""}
                     onClick={(e) => handleMenuClick("menu", e)}
                   >
-                    Menu
+                    {header.nav3}
                   </a>
                 </li>
                 <li className="scroll-to-section">
@@ -90,7 +99,7 @@ const Header = () => {
                     className={activeSection === "chefs" ? "active" : ""}
                     onClick={(e) => handleMenuClick("chefs", e)}
                   >
-                    Chefs
+                    {header.nav4}
                   </a>
                 </li>
                 <li className="scroll-to-section">
@@ -99,7 +108,7 @@ const Header = () => {
                     className={activeSection === "reservation" ? "active" : ""}
                     onClick={(e) => handleMenuClick("reservation", e)}
                   >
-                    Contact Us
+                    {header.nav5}
                   </a>
                 </li>
               </ul>

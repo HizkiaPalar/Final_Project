@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { getDatabase, ref, onValue } from "firebase/database";
 import Offers1 from "../../../assets/images/tab-icon-01.png";
 import Offers2 from "../../../assets/images/tab-icon-02.png";
 import Offers3 from "../../../assets/images/tab-icon-03.png";
@@ -21,6 +22,15 @@ import Offers19 from "../../../assets/images/Cofee.jpg";
 import Offers20 from "../../../assets/images/churos.jpg";
 import Offers21 from "../../../assets/images/Beef_Kebab.jpg";
 const Offers = () => {
+  const [offers, setOffers] = useState({});
+  useEffect(() => {
+    const db = getDatabase();
+    const offersRef = ref(db, "offers");
+    onValue(offersRef, (snapshot) => {
+      const data = snapshot.val();
+      setOffers(data);
+    });
+  }, []);
   return (
     <section className="section" id="offers">
       <div className="container">
@@ -73,39 +83,30 @@ const Offers = () => {
                             <div className="col-lg-12">
                               <div className="tab-item">
                                 <img src={Offers4} />
-                                <h4>Klab.at Fried Chicken</h4>
-                                <p>
-                                  Lorem ipsum dolor sit amet, consectetur koit
-                                  adipiscing elit, sed do.
-                                </p>
+                                <h4>{offers.menu1}</h4>
+                                <p>{offers.desc}</p>
                                 <div className="price">
-                                  <h6>30K</h6>
+                                  <h6>{offers.price1}</h6>
                                 </div>
                               </div>
                             </div>
                             <div className="col-lg-12">
                               <div className="tab-item">
                                 <img src={Offers5} />
-                                <h4>Klab.at Fried Chicken</h4>
-                                <p>
-                                  Lorem ipsum dolor sit amet, consectetur koit
-                                  adipiscing elit, sed do.
-                                </p>
+                                <h4>{offers.menu2}</h4>
+                                <p>{offers.desc}</p>
                                 <div className="price">
-                                  <h6>30K</h6>
+                                  <h6>{offers.price1}</h6>
                                 </div>
                               </div>
                             </div>
                             <div className="col-lg-12">
                               <div className="tab-item">
                                 <img src={Offers6} />
-                                <h4>Chicken Steak</h4>
-                                <p>
-                                  Lorem ipsum dolor sit amet, consectetur koit
-                                  adipiscing elit, sed do.
-                                </p>
+                                <h4>{offers.menu3}</h4>
+                                <p>{offers.desc}</p>
                                 <div className="price">
-                                  <h6>28K</h6>
+                                  <h6>{offers.price2}</h6>
                                 </div>
                               </div>
                             </div>
@@ -118,39 +119,30 @@ const Offers = () => {
                             <div className="col-lg-12">
                               <div className="tab-item">
                                 <img src={Offers7} />
-                                <h4>Dimsum</h4>
-                                <p>
-                                  Lorem ipsum dolor sit amet, consectetur koit
-                                  adipiscing elit, sed do.
-                                </p>
+                                <h4>{offers.menu4}</h4>
+                                <p>{offers.desc}</p>
                                 <div className="price">
-                                  <h6>25K</h6>
+                                  <h6>{offers.price3}</h6>
                                 </div>
                               </div>
                             </div>
                             <div className="col-lg-12">
                               <div className="tab-item">
                                 <img src={Offers8} />
-                                <h4>Tori Miso Ramen</h4>
-                                <p>
-                                  Lorem ipsum dolor sit amet, consectetur koit
-                                  adipiscing elit, sed do.
-                                </p>
+                                <h4>{offers.menu5}</h4>
+                                <p>{offers.desc}</p>
                                 <div className="price">
-                                  <h6>30K</h6>
+                                  <h6>{offers.price1}</h6>
                                 </div>
                               </div>
                             </div>
                             <div className="col-lg-12">
                               <div className="tab-item">
                                 <img src={Offers9} />
-                                <h4>French Fried</h4>
-                                <p>
-                                  Lorem ipsum dolor sit amet, consectetur koit
-                                  adipiscing elit, sed do.
-                                </p>
+                                <h4>{offers.menu6}</h4>
+                                <p>{offers.desc}</p>
                                 <div className="price">
-                                  <h6>22K</h6>
+                                  <h6>{offers.price4}</h6>
                                 </div>
                               </div>
                             </div>
@@ -167,39 +159,30 @@ const Offers = () => {
                             <div className="col-lg-12">
                               <div className="tab-item">
                                 <img src={Offers10} />
-                                <h4>Ayam Woku</h4>
-                                <p>
-                                  Lorem ipsum dolor sit amet, consectetur koit
-                                  adipiscing elit, sed do.
-                                </p>
+                                <h4>{offers.menu7}</h4>
+                                <p>{offers.desc}</p>
                                 <div className="price">
-                                  <h6>25K</h6>
+                                  <h6>{offers.price3}</h6>
                                 </div>
                               </div>
                             </div>
                             <div className="col-lg-12">
                               <div className="tab-item">
                                 <img src={Offers11} />
-                                <h4>Cappucino</h4>
-                                <p>
-                                  Lorem ipsum dolor sit amet, consectetur koit
-                                  adipiscing elit, sed do.
-                                </p>
+                                <h4>{offers.menu8}</h4>
+                                <p>{offers.desc}</p>
                                 <div className="price">
-                                  <h6>27K</h6>
+                                  <h6>{offers.price5}</h6>
                                 </div>
                               </div>
                             </div>
                             <div className="col-lg-12">
                               <div className="tab-item">
                                 <img src={Offers12} />
-                                <h4>Love Burst</h4>
-                                <p>
-                                  Lorem ipsum dolor sit amet, consectetur koit
-                                  adipiscing elit, sed do.
-                                </p>
+                                <h4>{offers.menu9}</h4>
+                                <p>{offers.desc}</p>
                                 <div className="price">
-                                  <h6>25K</h6>
+                                  <h6>{offers.price3}</h6>
                                 </div>
                               </div>
                             </div>
@@ -212,39 +195,30 @@ const Offers = () => {
                             <div className="col-lg-12">
                               <div className="tab-item">
                                 <img src={Offers13} />
-                                <h4>Matcha</h4>
-                                <p>
-                                  Lorem ipsum dolor sit amet, consectetur koit
-                                  adipiscing elit, sed do.
-                                </p>
+                                <h4>{offers.menu10}</h4>
+                                <p>{offers.desc}</p>
                                 <div className="price">
-                                  <h6>24K</h6>
+                                  <h6>{offers.price6}</h6>
                                 </div>
                               </div>
                             </div>
                             <div className="col-lg-12">
                               <div className="tab-item">
                                 <img src={Offers14} />
-                                <h4>Lemon Tea</h4>
-                                <p>
-                                  Lorem ipsum dolor sit amet, consectetur koit
-                                  adipiscing elit, sed do.
-                                </p>
+                                <h4>{offers.menu11}</h4>
+                                <p>{offers.desc}</p>
                                 <div className="price">
-                                  <h6>21K</h6>
+                                  <h6>{offers.price7}</h6>
                                 </div>
                               </div>
                             </div>
                             <div className="col-lg-12">
                               <div className="tab-item">
                                 <img src={Offers15} />
-                                <h4>Strawberry Tea</h4>
-                                <p>
-                                  Lorem ipsum dolor sit amet, consectetur koit
-                                  adipiscing elit, sed do.
-                                </p>
+                                <h4>{offers.menu12}</h4>
+                                <p>{offers.desc}</p>
                                 <div className="price">
-                                  <h6>23K</h6>
+                                  <h6>{offers.price6}</h6>
                                 </div>
                               </div>
                             </div>
@@ -261,39 +235,30 @@ const Offers = () => {
                             <div className="col-lg-12">
                               <div className="tab-item">
                                 <img src={Offers16} />
-                                <h4>Sea Salt Hazelnut</h4>
-                                <p>
-                                  Lorem ipsum dolor sit amet, consectetur koit
-                                  adipiscing elit, sed do.
-                                </p>
+                                <h4>{offers.menu13}</h4>
+                                <p>{offers.desc}</p>
                                 <div className="price">
-                                  <h6>31K</h6>
+                                  <h6>{offers.price1}</h6>
                                 </div>
                               </div>
                             </div>
                             <div className="col-lg-12">
                               <div className="tab-item">
                                 <img src={Offers17} />
-                                <h4>Dimsum</h4>
-                                <p>
-                                  Lorem ipsum dolor sit amet, consectetur koit
-                                  adipiscing elit, sed do.
-                                </p>
+                                <h4>{offers.menu14}</h4>
+                                <p>{offers.desc}</p>
                                 <div className="price">
-                                  <h6>25K</h6>
+                                  <h6>{offers.price3}</h6>
                                 </div>
                               </div>
                             </div>
                             <div className="col-lg-12">
                               <div className="tab-item">
                                 <img src={Offers18} />
-                                <h4>French Fries</h4>
-                                <p>
-                                  Lorem ipsum dolor sit amet, consectetur koit
-                                  adipiscing elit, sed do.
-                                </p>
+                                <h4>{offers.menu15}</h4>
+                                <p>{offers.desc}</p>
                                 <div className="price">
-                                  <h6>22K</h6>
+                                  <h6>{offers.price7}</h6>
                                 </div>
                               </div>
                             </div>
@@ -306,39 +271,30 @@ const Offers = () => {
                             <div className="col-lg-12">
                               <div className="tab-item">
                                 <img src={Offers19} />
-                                <h4>Hazelnut Latte</h4>
-                                <p>
-                                  Lorem ipsum dolor sit amet, consectetur koit
-                                  adipiscing elit, sed do.
-                                </p>
+                                <h4>{offers.menu16}</h4>
+                                <p>{offers.desc}</p>
                                 <div className="price">
-                                  <h6>31K</h6>
+                                  <h6>{offers.price1}</h6>
                                 </div>
                               </div>
                             </div>
                             <div className="col-lg-12">
                               <div className="tab-item">
                                 <img src={Offers20} />
-                                <h4>Churros</h4>
-                                <p>
-                                  Lorem ipsum dolor sit amet, consectetur koit
-                                  adipiscing elit, sed do.
-                                </p>
+                                <h4>{offers.menu17}</h4>
+                                <p>{offers.desc}</p>
                                 <div className="price">
-                                  <h6>23K</h6>
+                                  <h6>{offers.price6}</h6>
                                 </div>
                               </div>
                             </div>
                             <div className="col-lg-12">
                               <div className="tab-item">
                                 <img src={Offers21} />
-                                <h4>Beef Kebab</h4>
-                                <p>
-                                  Lorem ipsum dolor sit amet, consectetur koit
-                                  adipiscing elit, sed do.
-                                </p>
+                                <h4>{offers.menu18}</h4>
+                                <p>{offers.desc}</p>
                                 <div className="price">
-                                  <h6>36K</h6>
+                                  <h6>{offers.price8}</h6>
                                 </div>
                               </div>
                             </div>

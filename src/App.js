@@ -1,5 +1,4 @@
-import React, { useEffect, useRef } from "react";
-import "./App.css";
+import React, { useEffect, useRef, useState } from "react";
 import Banner from "./components/banner";
 import Header from "./components/header";
 import About from "./components/section/about";
@@ -8,26 +7,25 @@ import Offers from "./components/section/offers";
 import Footer from "./components/section/footer";
 import Reservation from "./components/section/reservation";
 import Menu from "./components/section/menu";
-import Navbar from "./components/navbar";
 
 function App() {
   const sectionsRef = useRef([]); // Array untuk menyimpan referensi elemen
+  const [activeSection, setActiveSection] = useState(""); // Lacak bagian aktif
 
   useEffect(() => {
     const handleScroll = () => {
-      // Buat observer
       const observer = new IntersectionObserver(
         (entries) => {
           entries.forEach((entry) => {
             if (entry.isIntersecting) {
-              entry.target.classList.add("visible");
+              // Ubah state aktif berdasarkan elemen terlihat
+              setActiveSection(entry.target.id);
             }
           });
         },
-        { threshold: 0.1 } // 10% dari elemen terlihat
+        { threshold: 0.6 } // 60% dari elemen terlihat
       );
 
-      // Observe setiap elemen
       sectionsRef.current.forEach((section) => {
         if (section) {
           observer.observe(section);
@@ -35,7 +33,6 @@ function App() {
       });
 
       return () => {
-        // Cleanup observer saat unmount
         sectionsRef.current.forEach((section) => {
           if (section) {
             observer.unobserve(section);
@@ -47,58 +44,45 @@ function App() {
     handleScroll();
   }, []);
 
+  const handleNavClick = (id) => {
+    const section = document.getElementById(id);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
+
   return (
     <div>
-
-      <Header />
-
-      {/* Tambahkan elemen ke sectionsRef untuk diobservasi */}
+      <Header activeSection={activeSection} onNavClick={handleNavClick} />
       <div
-        className="fade-in-section"
+        id="banner"
         ref={(el) => (sectionsRef.current[0] = el)}
+        style={{ paddingTop: "60px" }}
       >
         <Banner />
       </div>
 
-      <div
-        className="fade-in-section"
-        ref={(el) => (sectionsRef.current[1] = el)}
-      >
+      <div id="about" ref={(el) => (sectionsRef.current[1] = el)}>
         <About />
       </div>
 
-      <div
-        className="fade-in-section"
-        ref={(el) => (sectionsRef.current[2] = el)}
-      >
+      <div id="menu" ref={(el) => (sectionsRef.current[2] = el)}>
         <Menu />
       </div>
 
-      <div
-        className="fade-in-section"
-        ref={(el) => (sectionsRef.current[3] = el)}
-      >
+      <div id="chefs" ref={(el) => (sectionsRef.current[3] = el)}>
         <Chefs />
       </div>
 
-      <div
-        className="fade-in-section"
-        ref={(el) => (sectionsRef.current[4] = el)}
-      >
+      <div id="reservation" ref={(el) => (sectionsRef.current[4] = el)}>
         <Reservation />
       </div>
 
-      <div
-        className="fade-in-section"
-        ref={(el) => (sectionsRef.current[5] = el)}
-      >
+      <div id="offers" ref={(el) => (sectionsRef.current[5] = el)}>
         <Offers />
       </div>
 
-      <div
-        className="fade-in-section"
-        ref={(el) => (sectionsRef.current[6] = el)}
-      >
+      <div id="footer" ref={(el) => (sectionsRef.current[6] = el)}>
         <Footer />
       </div>
     </div>

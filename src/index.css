@@ -14439,7 +14439,11 @@ html {
   scroll-behavior: smooth;
 }
 
-/* style map*/
-
+.footer-logo {
+  max-width: 100px; /* Sesuaikan ukuran maksimum */
+  height: auto; /* Pertahankan rasio aspek gambar */
+  display: block; /* Opsional: untuk membuatnya elemen blok */
+  margin: 0 auto; /* Opsional: untuk memusatkan logo */
+}
 
 
