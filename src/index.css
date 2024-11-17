@@ -12828,7 +12828,6 @@ header
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15) !important;
 }
 
-
 .header-area {
   background-color: #fff;
   position: absolute;
@@ -12842,8 +12841,6 @@ header
   -o-transition: all 0.5s ease 0s;
   transition: all 0.5s ease 0s;
 }
-
-
 
 .header-area .main-nav .logo {
   line-height: 100px;
@@ -14402,8 +14399,6 @@ responsive
   color: #fff;
 }
 
-
-
 /* Menambahkan styling pada tampilan mobile */
 @media (max-width: 768px) {
   .menu-trigger {
@@ -14443,3 +14438,8 @@ responsive
 html {
   scroll-behavior: smooth;
 }
+
+/* style map*/
+
+
+

@@ -14,9 +14,9 @@ const Reservation = () => {
                 </h2>
               </div>
               <p>
-                Donec pretium est orci, non vulputate arcu hendrerit a. Fusce a
-                eleifend riqsie, namei sollicitudin urna diam, sed commodo purus
-                porta ut.
+                Need a comfortable and inspiring space for your activities?
+                Klabat Space is here for you! For reservations, inquiries, or
+                further assistance, feel free to reach out to us
               </p>
               <div className="row">
                 <div className="col-lg-6">
@@ -24,20 +24,20 @@ const Reservation = () => {
                     <i className="fa fa-phone" />
                     <h4>Phone Numbers</h4>
                     <span>
-                      <a href="#">080-090-0990</a>
-                      <br />
-                      <a href="#">080-090-0880</a>
+                      <a href="https://api.whatsapp.com/send/?phone=628114333323&text&type=phone_number&app_absent=0">
+                        0811-4333-323
+                      </a>
                     </span>
                   </div>
                 </div>
                 <div className="col-lg-6">
                   <div className="message">
-                    <i className="fa fa-envelope" />
-                    <h4>Emails</h4>
+                    <i className="fa fa-instagram" />
+                    <h4>Instagram</h4>
                     <span>
-                      <a href="#">hello@company.com</a>
-                      <br />
-                      <a href="#">info@company.com</a>
+                      <a href="https://www.instagram.com/klab.atspace/">
+                        klab.atspace
+                      </a>
                     </span>
                   </div>
                 </div>
