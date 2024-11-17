@@ -7,7 +7,7 @@ const Navbar = () => {
   useEffect(() => {
     const sections = ["home", "about", "service", "work", "contact"];
     const options = { threshold: 0.3 };
-
+    
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
@@ -61,7 +61,9 @@ const Navbar = () => {
           <ul className="navbar-nav">
             <li className="nav-item">
               <a
-                className={`nav-link js-scroll ${activeSection === "home" ? "active" : ""}`}
+                className={`nav-link js-scroll ${
+                  activeSection === "home" ? "active" : ""
+                }`}
                 href="#home"
                 onClick={() => handleNavClick("home")}
               >
@@ -70,7 +72,9 @@ const Navbar = () => {
             </li>
             <li className="nav-item">
               <a
-                className={`nav-link js-scroll ${activeSection === "about" ? "active" : ""}`}
+                className={`nav-link js-scroll ${
+                  activeSection === "about" ? "active" : ""
+                }`}
                 href="#about"
                 onClick={() => handleNavClick("about")}
               >
@@ -79,7 +83,9 @@ const Navbar = () => {
             </li>
             <li className="nav-item">
               <a
-                className={`nav-link js-scroll ${activeSection === "service" ? "active" : ""}`}
+                className={`nav-link js-scroll ${
+                  activeSection === "service" ? "active" : ""
+                }`}
                 href="#service"
                 onClick={() => handleNavClick("service")}
               >
@@ -88,7 +94,9 @@ const Navbar = () => {
             </li>
             <li className="nav-item">
               <a
-                className={`nav-link js-scroll ${activeSection === "work" ? "active" : ""}`}
+                className={`nav-link js-scroll ${
+                  activeSection === "work" ? "active" : ""
+                }`}
                 href="#work"
                 onClick={() => handleNavClick("work")}
               >
@@ -97,7 +105,9 @@ const Navbar = () => {
             </li>
             <li className="nav-item">
               <a
-                className={`nav-link js-scroll ${activeSection === "contact" ? "active" : ""}`}
+                className={`nav-link js-scroll ${
+                  activeSection === "contact" ? "active" : ""
+                }`}
                 href="#contact"
                 onClick={() => handleNavClick("contact")}
               >
