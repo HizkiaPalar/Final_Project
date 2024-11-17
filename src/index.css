@@ -12828,18 +12828,6 @@ header
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15) !important;
 }
 
-.background-header .logo,
-.background-header .main-nav .nav li a {
-  color: #1e1e1e !important;
-}
-
-.background-header .main-nav .nav li:hover a {
-  color: #fb5849 !important;
-}
-
-.background-header .nav li a.active {
-  color: #fb5849 !important;
-}
 
 .header-area {
   background-color: #fff;
@@ -12855,10 +12843,7 @@ header
   transition: all 0.5s ease 0s;
 }
 
-.header-area .main-nav {
-  min-height: 80px;
-  background: transparent;
-}
+
 
 .header-area .main-nav .logo {
   line-height: 100px;
@@ -12885,11 +12870,6 @@ header
   width: 100%;
   z-index: 10;
   transition: all 0.3s ease-in-out;
-}
-
-.header-area.scrolled {
-  background-color: #ffffff; /* Warna latar belakang setelah scroll */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Tambahkan bayangan opsional */
 }
 
 .header-area .logo img {
@@ -14310,7 +14290,7 @@ responsive
 
 /* Solid background for the header after scrolling */
 .header-area.scrolled {
-  background-color: rgba(0, 0, 0, 0.5); /* Darker background on scroll */
+  background-color: #ffffff; /* Darker background on scroll */
   padding: 10px 0; /* Reduce padding on scroll */
 }
 
@@ -14422,30 +14402,44 @@ responsive
   color: #fff;
 }
 
-.header-area {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 10;
-  transition: all 0.3s ease-in-out;
+
+
+/* Menambahkan styling pada tampilan mobile */
+@media (max-width: 768px) {
+  .menu-trigger {
+    display: block; /* Tampilkan tombol menu pada mobile */
+  }
+
+  .nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    flex-direction: column;
+    display: none;
+    text-align: center;
+    padding: 20px 0;
+  }
+
+  .nav li {
+    margin: 10px 0;
+  }
+
+  .nav.open {
+    display: flex; /* Tampilkan menu saat tombol menu diklik */
+  }
+
+  .nav li a {
+    font-size: 18px;
+  }
+
+  .header-area.scrolled .nav {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
 }
 
-.header-area.transparent {
-  background-color: transparent; /* Warna latar transparan saat di atas */
-}
-
-.header-area.scrolled {
-  background-color: #ffffff; /* Warna latar putih saat scroll */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Tambahkan bayangan opsional */
-}
-
-.fade-in-section {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-}
-
-.fade-in-section.visible {
-  opacity: 1;
-  transform: translateY(0);
+/* Scroll smooth untuk semua anchor link */
+html {
+  scroll-behavior: smooth;
 }

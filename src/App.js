@@ -8,6 +8,7 @@ import Offers from "./components/section/offers";
 import Footer from "./components/section/footer";
 import Reservation from "./components/section/reservation";
 import Menu from "./components/section/menu";
+import Navbar from "./components/navbar";
 
 function App() {
   const sectionsRef = useRef([]); // Array untuk menyimpan referensi elemen
@@ -48,6 +49,7 @@ function App() {
 
   return (
     <div>
+
       <Header />
 
       {/* Tambahkan elemen ke sectionsRef untuk diobservasi */}

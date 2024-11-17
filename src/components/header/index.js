@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from "react";
-import Logo from "././../../assets/images/logoklabatspace.jpg";
+import React, { useState, useEffect } from "react";
+import Logo from "./../../assets/images/logoklabatspace.jpg";
 
 const Header = () => {
   const [activeSection, setActiveSection] = useState("top");
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false); // Menambah state untuk membuka menu
 
-  // Add fade-in effect on mount
   useEffect(() => {
     const headerElement = document.querySelector(".header-area");
     if (headerElement) {
@@ -13,7 +13,6 @@ const Header = () => {
     }
   }, []);
 
-  // Scroll event listener for active section and navbar transparency
   useEffect(() => {
     const handleScroll = () => {
       const sections = ["top", "about", "menu", "chefs", "reservation"];
@@ -27,14 +26,22 @@ const Header = () => {
       }, "top");
 
       setActiveSection(currentSection);
-
-      // Check if scrolled down and toggle transparency
-      setIsScrolled(window.scrollY > 50); // Adjust scroll value as needed
+      setIsScrolled(window.scrollY > 50);
     };
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const handleMenuClick = (section, e) => {
+    e.preventDefault();
+    setActiveSection(section);
+    document.getElementById(section)?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen); // Men-toggle menu saat diklik
+  };
 
   return (
     <header
@@ -46,17 +53,15 @@ const Header = () => {
         <div className="row">
           <div className="col-12">
             <nav className="main-nav">
-              {/* ***** Logo Start ***** */}
               <a href="#top" className="logo">
-                <img src={Logo} alt="klassy cafe html template" />
+                <img src={Logo} alt="Klabat Space Logo" />
               </a>
-              {/* ***** Logo End ***** */}
-              {/* ***** Menu Start ***** */}
-              <ul className="nav">
+              <ul className={`nav ${isMenuOpen ? "open" : ""}`}>
                 <li className="scroll-to-section">
                   <a
                     href="#top"
                     className={activeSection === "top" ? "active" : ""}
+                    onClick={(e) => handleMenuClick("top", e)}
                   >
                     Home
                   </a>
@@ -65,6 +70,7 @@ const Header = () => {
                   <a
                     href="#about"
                     className={activeSection === "about" ? "active" : ""}
+                    onClick={(e) => handleMenuClick("about", e)}
                   >
                     About
                   </a>
@@ -73,6 +79,7 @@ const Header = () => {
                   <a
                     href="#menu"
                     className={activeSection === "menu" ? "active" : ""}
+                    onClick={(e) => handleMenuClick("menu", e)}
                   >
                     Menu
                   </a>
@@ -81,6 +88,7 @@ const Header = () => {
                   <a
                     href="#chefs"
                     className={activeSection === "chefs" ? "active" : ""}
+                    onClick={(e) => handleMenuClick("chefs", e)}
                   >
                     Chefs
                   </a>
@@ -89,15 +97,15 @@ const Header = () => {
                   <a
                     href="#reservation"
                     className={activeSection === "reservation" ? "active" : ""}
+                    onClick={(e) => handleMenuClick("reservation", e)}
                   >
                     Contact Us
                   </a>
                 </li>
               </ul>
-              <a className="menu-trigger">
+              <a className="menu-trigger" onClick={toggleMenu}>
                 <span>Menu</span>
               </a>
-              {/* ***** Menu End ***** */}
             </nav>
           </div>
         </div>
