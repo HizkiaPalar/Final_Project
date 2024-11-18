@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { getDatabase, ref, onValue } from "firebase/database";
-import WhiteLogo from "../../../assets/images/logoklabatspace.jpg";
 const Footer = () => {
   const [footer, setFooter] = useState({});
   useEffect(() => {
@@ -45,7 +44,7 @@ const Footer = () => {
             <div className="logo">
               <a href="index.html">
                 <img
-                  src={WhiteLogo}
+                  src={`data:image/jpg;base64,${footer.image1}`}
                   className="footer-logo"
                   alt="Klabat Space Logo"
                 />
