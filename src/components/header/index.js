@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import Logo from "./../../assets/images/logoklabatspace.jpg";
 import { getDatabase, ref, onValue } from "firebase/database";
 
 const Header = () => {
@@ -63,7 +62,7 @@ const Header = () => {
           <div className="col-12">
             <nav className="main-nav">
               <a href="#top" className="logo">
-                <img src={Logo} alt="Klabat Space Logo" />
+                <img src={`data:image/jpg;base64,${header.logo}`} />
               </a>
               <ul className={`nav ${isMenuOpen ? "open" : ""}`}>
                 <li className="scroll-to-section">

@@ -1,7 +1,4 @@
 import React, { useEffect, useState } from "react";
-import Chefs1 from "../../../assets/images/Barista.jpg";
-import Chefs2 from "../../../assets/images/Kitchen.jpg";
-import Chefs3 from "../../../assets/images/Pastry.jpg";
 import { getDatabase, ref, onValue } from "firebase/database";
 const Chefs = () => {
   const [chef, setChef] = useState({});
@@ -46,7 +43,7 @@ const Chefs = () => {
                     </a>
                   </li>
                 </ul>
-                <img src={Chefs1} />
+                <img src={`data:image/jpg;base64,${chef.image1}`}/>
               </div>
               <div className="down-content">
                 <h4>{chef.chef1}</h4>
@@ -75,7 +72,7 @@ const Chefs = () => {
                     </a>
                   </li>
                 </ul>
-                <img src={Chefs2} />
+                <img src={`data:image/jpg;base64,${chef.image2}`} />
               </div>
               <div className="down-content">
                 <h4>{chef.chef2}</h4>
@@ -104,7 +101,7 @@ const Chefs = () => {
                     </a>
                   </li>
                 </ul>
-                <img src={Chefs3} />
+                <img src={`data:image/jpg;base64,${chef.image3}`} />
               </div>
               <div className="down-content">
                 <h4>{chef.chef3}</h4>

@@ -1,10 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { getDatabase, ref, onValue } from "firebase/database";
 import Slider from "react-slick";
-import menuItem1 from "../../../assets/images/pao.jpg";
-import menuItem2 from "../../../assets/images/dimsum.jpg";
-import menuItem3 from "../../../assets/images/churos.jpg";
-import menuItem5 from "../../../assets/images/Tori.jpg";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
@@ -57,7 +53,7 @@ const Menu = () => {
           <Slider {...settings}>
             <div className="item">
               <div className="card">
-                <img src={menuItem1}  />
+                <img src={`data:image/jpg;base64,${menu.image1}`}  />
                 <div className="price">
                   <h6>{menu.price1}</h6>
                 </div>
@@ -76,7 +72,7 @@ const Menu = () => {
             </div>
             <div className="item">
               <div className="card">
-                <img src={menuItem2} />
+                <img src={`data:image/jpg;base64,${menu.image2}`} />
                 <div className="price">
                   <h6>{menu.price2}</h6>
                 </div>
@@ -95,7 +91,7 @@ const Menu = () => {
             </div>
             <div className="item">
               <div className="card">
-                <img src={menuItem3}  />
+                <img src={`data:image/jpg;base64,${menu.image3}`}  />
                 <div className="price">
                   <h6>{menu.price3}</h6>
                 </div>
@@ -115,7 +111,7 @@ const Menu = () => {
             
             <div className="item">
               <div className="card">
-                <img src={menuItem5} />
+                <img src={`data:image/jpg;base64,${menu.image4}`} />
                 <div className="price">
                   <h6>{menu.price4}</h6>
                 </div>

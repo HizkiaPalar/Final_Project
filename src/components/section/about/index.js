@@ -1,8 +1,4 @@
 import React, { useEffect, useState } from "react";
-import Nasi from "../../../assets/images/Nasi.jpg";
-import Kentang from "../../../assets/images/Kentang.jpg";
-import Steak from "../../../assets/images/steak.jpg";
-import Bg from "../../../assets/images/logoklabatspace.jpg";
 import { getDatabase, ref, onValue } from "firebase/database";
 
 const About = () => {
@@ -28,13 +24,13 @@ const About = () => {
               <p>{about.desc}</p>
               <div className="row">
                 <div className="col-4">
-                  <img src={Nasi} alt="About Image 1" />
+                  <img src={`data:image/jpg;base64,${about.image1}`} />
                 </div>
                 <div className="col-4">
-                  <img src={Kentang} alt="About Image 2" />
+                  <img src={`data:image/jpg;base64,${about.image2}`} />
                 </div>
                 <div className="col-4">
-                  <img src={Steak} alt="About Image 3" />
+                  <img src={`data:image/jpg;base64,${about.image3}`} />
                 </div>
               </div>
             </div>
@@ -45,7 +41,7 @@ const About = () => {
                 <a rel="nofollow" href="https://www.youtube.com/@Klab.atSpace">
                   <i className="fa fa-play" />
                 </a>
-                <img src={Bg} alt="About Video" />
+                <img src={`data:image/jpg;base64,${about.image4}`} />
               </div>
             </div>
           </div>
