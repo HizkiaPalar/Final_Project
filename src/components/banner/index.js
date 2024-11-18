@@ -2,11 +2,19 @@ import React, { useState, useEffect } from "react";
 import Slide1 from "../../assets/images/banner2.jpg";
 import Slide2 from "../../assets/images/banner3.jpg";
 import Slide3 from "../../assets/images/banner1.jpg";
-
+import { getDatabase, ref, onValue } from "firebase/database";
 const Banner = () => {
   const slides = [Slide1, Slide2, Slide3];
   const [currentSlide, setCurrentSlide] = useState(0);
-
+  const [banner, setBanner] = useState({});
+  useEffect(() => {
+    const db = getDatabase();
+    const bannerRef = ref(db, "banner");
+    onValue(bannerRef, (snapshot) => {
+      const data = snapshot.val();
+      setBanner(data);
+    });
+  }, []);
   // Automatically change slides every 3 seconds
   useEffect(() => {
     const slideInterval = setInterval(() => {
@@ -23,10 +31,10 @@ const Banner = () => {
           <div className="col-lg-4">
             <div className="left-content">
               <div className="inner-content">
-                <h4>Klab.at</h4>
-                <h6>Social Space - Getaway - Garden </h6>
+                <h4>{banner.banner1}</h4>
+                <h6>{banner.banner2}</h6>
                 <div className="main-white-button scroll-to-section">
-                  <a href="#reservation">Contact Us</a>
+                  <a href="#reservation">{banner.banner3}</a>
                 </div>
               </div>
             </div>
