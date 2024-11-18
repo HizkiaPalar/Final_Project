@@ -53,18 +53,16 @@ const Menu = () => {
           <Slider {...settings}>
             <div className="item">
               <div className="card">
-                <img src={`data:image/jpg;base64,${menu.image1}`}  />
+                <img src={`data:image/jpg;base64,${menu.image1}`} />
                 <div className="price">
                   <h6>{menu.price1}</h6>
                 </div>
                 <div className="info">
                   <h1 className="title">{menu.menu1}</h1>
-                  <p className="description">
-                    {menu.desc1}
-                  </p>
+                  <p className="description">{menu.desc1}</p>
                   <div className="main-text-button">
                     <a href="#reservation">
-                      Contact <i className="fa fa-angle-down" />
+                      {menu.contact} <i className="fa fa-angle-down" />
                     </a>
                   </div>
                 </div>
@@ -78,12 +76,10 @@ const Menu = () => {
                 </div>
                 <div className="info">
                   <h1 className="title">{menu.menu2}</h1>
-                  <p className="description">
-                    {menu.desc2}
-                  </p>
+                  <p className="description">{menu.desc2}</p>
                   <div className="main-text-button">
                     <a href="#reservation">
-                      Contact <i className="fa fa-angle-down" />
+                      {menu.contact} <i className="fa fa-angle-down" />
                     </a>
                   </div>
                 </div>
@@ -91,24 +87,22 @@ const Menu = () => {
             </div>
             <div className="item">
               <div className="card">
-                <img src={`data:image/jpg;base64,${menu.image3}`}  />
+                <img src={`data:image/jpg;base64,${menu.image3}`} />
                 <div className="price">
                   <h6>{menu.price3}</h6>
                 </div>
                 <div className="info">
                   <h1 className="title">{menu.menu3}</h1>
-                  <p className="description">
-                    {menu.desc3}
-                  </p>
+                  <p className="description">{menu.desc3}</p>
                   <div className="main-text-button">
                     <a href="#reservation">
-                      Contact <i className="fa fa-angle-down" />
+                      {menu.contact} <i className="fa fa-angle-down" />
                     </a>
                   </div>
                 </div>
               </div>
             </div>
-            
+
             <div className="item">
               <div className="card">
                 <img src={`data:image/jpg;base64,${menu.image4}`} />
@@ -117,12 +111,10 @@ const Menu = () => {
                 </div>
                 <div className="info">
                   <h1 className="title">{menu.menu4}</h1>
-                  <p className="description">
-                    {menu.desc4}
-                  </p>
+                  <p className="description">{menu.desc4}</p>
                   <div className="main-text-button">
                     <a href="#reservation">
-                      Contact <i className="fa fa-angle-down" />
+                      {menu.contact} <i className="fa fa-angle-down" />
                     </a>
                   </div>
                 </div>
