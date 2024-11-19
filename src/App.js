@@ -9,8 +9,9 @@ import Reservation from "./components/section/reservation";
 import Menu from "./components/section/menu";
 
 function App() {
-  const sectionsRef = useRef([]); // Array untuk menyimpan referensi elemen
-  const [activeSection, setActiveSection] = useState(""); // Lacak bagian aktif
+  const sectionsRef = useRef([]);
+  const [activeSection, setActiveSection] = useState("");
+  const [visibleSections, setVisibleSections] = useState(new Set());
 
   useEffect(() => {
     const handleScroll = () => {
@@ -18,12 +19,15 @@ function App() {
         (entries) => {
           entries.forEach((entry) => {
             if (entry.isIntersecting) {
-              // Ubah state aktif berdasarkan elemen terlihat
               setActiveSection(entry.target.id);
+              setVisibleSections(prev => new Set([...prev, entry.target.id]));
             }
           });
         },
-        { threshold: 0.6 } // 60% dari elemen terlihat
+        { 
+          threshold: 0.2,  // Reduced threshold to trigger animation earlier
+          rootMargin: "0px 0px -100px 0px" // Triggers slightly before element comes into view
+        }
       );
 
       sectionsRef.current.forEach((section) => {
@@ -51,9 +55,17 @@ function App() {
     }
   };
 
+  // Common section style with animation
+  const getSectionStyle = (id) => ({
+    opacity: visibleSections.has(id) ? 1 : 0,
+    transform: visibleSections.has(id) ? 'translateY(0)' : 'translateY(50px)',
+    transition: 'opacity 0.8s ease-out, transform 0.8s ease-out',
+  });
+
   return (
     <div>
       <Header activeSection={activeSection} onNavClick={handleNavClick} />
+      
       <div
         id="banner"
         ref={(el) => (sectionsRef.current[0] = el)}
@@ -62,27 +74,51 @@ function App() {
         <Banner />
       </div>
 
-      <div id="about" ref={(el) => (sectionsRef.current[1] = el)}>
+      <div 
+        id="about" 
+        ref={(el) => (sectionsRef.current[1] = el)}
+        style={getSectionStyle("about")}
+      >
         <About />
       </div>
 
-      <div id="menu" ref={(el) => (sectionsRef.current[2] = el)}>
+      <div 
+        id="menu" 
+        ref={(el) => (sectionsRef.current[2] = el)}
+        style={getSectionStyle("menu")}
+      >
         <Menu />
       </div>
 
-      <div id="chefs" ref={(el) => (sectionsRef.current[3] = el)}>
+      <div 
+        id="chefs" 
+        ref={(el) => (sectionsRef.current[3] = el)}
+        style={getSectionStyle("chefs")}
+      >
         <Chefs />
       </div>
 
-      <div id="reservation" ref={(el) => (sectionsRef.current[4] = el)}>
+      <div 
+        id="reservation" 
+        ref={(el) => (sectionsRef.current[4] = el)}
+        style={getSectionStyle("reservation")}
+      >
         <Reservation />
       </div>
 
-      <div id="offers" ref={(el) => (sectionsRef.current[5] = el)}>
+      <div 
+        id="offers" 
+        ref={(el) => (sectionsRef.current[5] = el)}
+        style={getSectionStyle("offers")}
+      >
         <Offers />
       </div>
 
-      <div id="footer" ref={(el) => (sectionsRef.current[6] = el)}>
+      <div 
+        id="footer" 
+        ref={(el) => (sectionsRef.current[6] = el)}
+        style={getSectionStyle("footer")}
+      >
         <Footer />
       </div>
     </div>

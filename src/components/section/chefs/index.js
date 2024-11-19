@@ -12,7 +12,7 @@ const Chefs = () => {
   }, []);
   return (
     <section className="section" id="chefs">
-      <div className="container">
+      <div className="container" style={{ marginTop: '-140px' }}>
         <div className="row">
           <div className="col-lg-4 offset-lg-4 text-center">
             <div className="section-heading">
