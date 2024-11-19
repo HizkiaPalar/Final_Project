@@ -12,7 +12,7 @@ const Offers = () => {
   }, []);
   return (
     <section className="section" id="offers">
-      <div className="container">
+      <div className="container" style={{ marginTop: "-130px" }}>
         <div className="row">
           <div className="col-lg-4 offset-lg-4 text-center">
             <div className="section-heading">

@@ -38,7 +38,7 @@ const Menu = () => {
 
   return (
     <section className="section" id="menu">
-      <div className="container">
+      <div className="container" style={{ marginTop: '-250px' }}>
         <div className="row">
           <div className="col-lg-4">
             <div className="section-heading">

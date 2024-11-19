@@ -4,7 +4,7 @@ import { getDatabase, ref, onValue } from "firebase/database";
 const Header = () => {
   const [activeSection, setActiveSection] = useState("top");
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isMenuOpen, setIsMenuOpen] = useState(false); // Menambah state untuk membuka menu
+  const [isMenuOpen, setIsMenuOpen] = useState(false); 
   const [header, setHeader] = useState({});
   useEffect(() => {
     const db = getDatabase();
@@ -48,7 +48,7 @@ const Header = () => {
   };
 
   const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen); // Men-toggle menu saat diklik
+    setIsMenuOpen(!isMenuOpen); 
   };
 
   return (

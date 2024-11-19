@@ -12,7 +12,7 @@ const Reservation = () => {
   }, []);
   return (
     <section className="section" id="reservation">
-      <div className="container">
+      <div className="container" style={{ marginTop: '-180px' }}>
         <div className="row">
           <div className="col-lg-6 align-self-center">
             <div className="left-text-content">
